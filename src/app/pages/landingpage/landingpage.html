@@ -1,0 +1,43 @@
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+
+        <div class="card shadow">
+          <div class="card-body">
+            <h3 class="card-title text-center text-primary mb-4">EMI Calculator</h3>
+
+            <form (ngSubmit)="calculateintrest()">
+              <!-- Loan Amount -->
+              <div class="mb-3">
+                <label class="form-label">Loan Amount</label>
+                <input name="amount" [(ngModel)]="amount"  type="number" class="form-control" placeholder="Enter loan amount">
+              </div>
+
+              <!-- Interest Rate -->
+              <div class="mb-3">
+                <label class="form-label">Interest Rate (%)</label>
+                <input name="intrest" [(ngModel)]="intrest" type="number" class="form-control" placeholder="Enter annual interest rate">
+              </div>
+
+              <!-- Tenure -->
+              <div class="mb-3">
+                <label class="form-label">Tenure (Years)</label>
+                <input name="tenure" [(ngModel)]="tenure" type="number" class="form-control" placeholder="Enter tenure in years">
+              </div>
+
+              <!-- Calculate Button -->
+              <button type="submit" class="btn btn-primary w-100">Calculate EMI</button>
+            </form>
+            <!-- FORM END -->
+
+            <!-- Result -->
+            <div class="alert alert-success text-center mt-4" role="alert">
+              <h5 class="mb-0">Monthly EMI: <strong>₹ {{emi}}</strong></h5>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

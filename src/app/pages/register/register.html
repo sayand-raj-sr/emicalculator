@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row min-vh-100 justify-content-center align-items-center">
+
+    <div class="col-md-6 col-lg-4">
+      <h1 class="text-center text-primary mb-4">Register</h1>
+
+      <form (ngSubmit)="register()">
+        <!-- Name -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input [(ngModel)]="user.username" name="username" type="text" id="registerName" class="form-control" />
+          <label class="form-label" for="registerName">Full Name</label>
+        </div>
+
+        <!-- Email -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input [(ngModel)]='user.email' name="email" type="email"  id="registerEmail" class="form-control" />
+          <label class="form-label" for="registerEmail">Email address</label>
+        </div>
+
+        <!-- Password -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input [(ngModel)]="user.password" name="password" type="password" id="registerPassword" class="form-control" />
+          <label class="form-label" for="registerPassword">Password</label>
+        </div>
+
+        <!-- Confirm Password -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input [(ngModel)]="user.confirmpassword" name="confirmpassword" type="password" id="registerConfirmPassword" class="form-control" />
+          <label class="form-label" for="registerConfirmPassword">Confirm Password</label>
+        </div>
+
+        <!-- Terms -->
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="termsCheck" />
+          <label class="form-check-label" for="termsCheck">
+            I agree to the Terms & Conditions
+          </label>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary w-100 mb-4">
+          Register
+        </button>
+
+        <!-- Login link -->
+        <div class="text-center">
+          <p>Already have an account? <a href="/login">Login</a></p>
+
+          <p>or sign up with:</p>
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="fab fa-google"></i>
+          </button>
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="fab fa-github"></i>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
