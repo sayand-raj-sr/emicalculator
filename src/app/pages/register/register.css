@@ -1,0 +1,32 @@
+.register-wrapper {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.main-card {
+  max-width: 1000px; /* Slightly wider to accommodate side-by-side inputs */
+  margin: auto;
+}
+
+.register-image-side {
+  background: url('https://i.pinimg.com/736x/89/3c/56/893c56a27ae1f4b2a04318dcbd3dca04.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.image-overlay {
+  height: 100%;
+  background: linear-gradient(0deg, rgba(10, 31, 68, 0.9) 0%, rgba(10, 31, 68, 0.2) 100%);
+}
+
+.divider:after, .divider:before {
+  content: ""; flex: 1; height: 1px; background: #eee;
+}
+
+.btn-floating-sm {
+  width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;
+}
+
+.w-fit { width: fit-content; }

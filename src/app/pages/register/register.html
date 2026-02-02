@@ -1,63 +1,77 @@
-<div class="container">
-  <div class="row min-vh-100 justify-content-center align-items-center">
-
-    <div class="col-md-6 col-lg-4">
-      <h1 class="text-center text-primary mb-4">Register</h1>
-
-      <form (ngSubmit)="register()">
-        <!-- Name -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input [(ngModel)]="user.username" name="username" type="text" id="registerName" class="form-control" />
-          <label class="form-label" for="registerName">Full Name</label>
+<div class="register-wrapper d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="row g-0 bg-white rounded-4 shadow-lg overflow-hidden main-card">
+      
+      <div class="col-md-6 d-none d-md-block">
+        <div class="register-image-side h-100">
+          <div class="image-overlay d-flex flex-column justify-content-end p-5 text-white">
+            <span class="badge bg-primary w-fit mb-2">New Account</span>
+            <h2 class="fw-bold display-6">Start Planning.</h2>
+            <p class="opacity-75 lead">Join to save your calculations and track your financial goals.</p>
+          </div>
         </div>
+      </div>
 
-        <!-- Email -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input [(ngModel)]='user.email' name="email" type="email"  id="registerEmail" class="form-control" />
-          <label class="form-label" for="registerEmail">Email address</label>
+      <div class="col-md-6 p-4 p-lg-5">
+        <div class="form-container">
+          <div class="text-center text-md-start mb-4">
+            <h2 class="fw-bold text-dark">Create Account</h2>
+            <p class="text-muted small">Fill in the details to get started</p>
+          </div>
+
+          <form (ngSubmit)="register()">
+            <div class="form-floating mb-3">
+              <input [(ngModel)]="user.username" name="username" type="text" class="form-control" id="regName" placeholder="Full Name">
+              <label for="regName">Full Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input [(ngModel)]="user.email" name="email" type="email" class="form-control" id="regEmail" placeholder="Email">
+              <label for="regEmail">Email address</label>
+            </div>
+
+            <div class="row g-2">
+              <div class="col-md">
+                <div class="form-floating mb-3">
+                  <input [(ngModel)]="user.password" name="password" type="password" class="form-control" id="regPass" placeholder="Password">
+                  <label for="regPass">Password</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-floating mb-3">
+                  <input [(ngModel)]="user.confirmpassword" name="confirmpassword" type="password" class="form-control" id="regConfirm" placeholder="Confirm">
+                  <label for="regConfirm">Confirm</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-check mb-4 small">
+              <input class="form-check-input" type="checkbox" id="termsCheck">
+              <label class="form-check-label text-muted" for="termsCheck">
+                I agree to the <a href="#" class="text-primary text-decoration-none">Terms & Conditions</a>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100 mb-3 shadow-sm">
+              Register Now
+            </button>
+
+            <div class="divider d-flex align-items-center my-3">
+              <p class="text-center small fw-bold mx-3 mb-0 text-muted">OR</p>
+            </div>
+
+            <div class="d-flex justify-content-center gap-2 mb-4">
+              <button type="button" class="btn btn-outline-light border text-dark btn-floating-sm"><i class="fab fa-google"></i></button>
+              <button type="button" class="btn btn-outline-light border text-dark btn-floating-sm"><i class="fab fa-github"></i></button>
+              <button type="button" class="btn btn-outline-light border text-dark btn-floating-sm"><i class="fab fa-facebook-f"></i></button>
+            </div>
+
+            <p class="mb-0 text-center text-muted small">
+              Already have an account? <a href="/login" class="text-primary fw-bold text-decoration-none">Login</a>
+            </p>
+          </form>
         </div>
-
-        <!-- Password -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input [(ngModel)]="user.password" name="password" type="password" id="registerPassword" class="form-control" />
-          <label class="form-label" for="registerPassword">Password</label>
-        </div>
-
-        <!-- Confirm Password -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input [(ngModel)]="user.confirmpassword" name="confirmpassword" type="password" id="registerConfirmPassword" class="form-control" />
-          <label class="form-label" for="registerConfirmPassword">Confirm Password</label>
-        </div>
-
-        <!-- Terms -->
-        <div class="form-check mb-4">
-          <input class="form-check-input" type="checkbox" id="termsCheck" />
-          <label class="form-check-label" for="termsCheck">
-            I agree to the Terms & Conditions
-          </label>
-        </div>
-
-        <!-- Submit -->
-        <button type="submit" class="btn btn-primary w-100 mb-4">
-          Register
-        </button>
-
-        <!-- Login link -->
-        <div class="text-center">
-          <p>Already have an account? <a href="/login">Login</a></p>
-
-          <p>or sign up with:</p>
-          <button type="button" class="btn btn-secondary btn-floating mx-1">
-            <i class="fab fa-facebook-f"></i>
-          </button>
-          <button type="button" class="btn btn-secondary btn-floating mx-1">
-            <i class="fab fa-google"></i>
-          </button>
-          <button type="button" class="btn btn-secondary btn-floating mx-1">
-            <i class="fab fa-github"></i>
-          </button>
-        </div>
-      </form>
+      </div>
 
     </div>
   </div>
